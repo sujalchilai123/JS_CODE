@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String Operations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <h2>Name: Sujal Chilai</h2>
+      <h3>Roll Number: 42315</h3>
+      <h3>Batch: R7</h3>
+    </div>
+
+    <h1>String Operations</h1>
+
+    <div class="operations-wrapper">
+
+      <div class="operation">
+        <h2>Reverse String</h2>
+        <input type="text" id="reverseInput" placeholder="Enter string to reverse">
+        <button onclick="reverseString()">Reverse</button>
+        <div id="reverseResult" class="output"></div>
+      </div>
+
+      <div class="operation">
+        <h2>Replace Characters</h2>
+        <input type="text" id="replaceInput" placeholder="Enter original string">
+        <input type="text" id="oldChar" placeholder="Character to replace">
+        <input type="text" id="newChar" placeholder="New character">
+        <button onclick="replaceCharacter()">Replace</button>
+        <div id="replaceResult" class="output"></div>
+      </div>
+
+      <div class="operation">
+        <h2>Palindrome Check</h2>
+        <input type="text" id="palindromeInput" placeholder="Enter string">
+        <button onclick="checkPalindrome()">Check</button>
+        <div id="palindromeResult" class="output"></div>
+      </div>
+
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

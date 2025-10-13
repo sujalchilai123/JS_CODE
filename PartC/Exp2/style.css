@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
+}
+
+.container {
+  width: 90%;
+  max-width: 450px;
+  margin: 40px auto;
+}
+
+.header {
+  text-align: center;
+  background: #4b79a1;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.header h2, .header h3 {
+  margin: 5px 0;
+}
+
+.form-card, .success-card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+form h2, .success-card h1 {
+  text-align: center;
+  color: #4b79a1;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+.gender-options {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background: #4b79a1;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #35506a;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+#logoutBtn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  font-size: 13px;
+  background: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1000;
+  height: 50px;
+  width: 150px;
+}
+
+#logoutBtn:hover {
+  background: #a71d2a;
+}
+
+.success-card p {
+  text-align: center;
+  margin: 10px 0;
+  color: #333;
+}

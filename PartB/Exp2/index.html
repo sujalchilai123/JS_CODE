@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Array & Array Objects in JavaScript</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class="container">
+  <div class="header">
+   <h2>Name: Sujal Chilai</h2>
+   <h3>Roll Number: 42315</h3>
+   <h3>Batch: R7</h3>
+  </div>
+
+  <h1>Array & Array Object Operations</h1>
+
+  <div class="operation">
+   <h2>Create Array</h2>
+   <label>Enter number of elements:</label>
+   <input type="number" id="arraySize" placeholder="Number of elements">
+   <button onclick="setArraySize()">Set Size</button>
+   <div id="elementInputs"></div>
+   <div id="createResult" class="output"></div>
+  </div>
+
+  <div class="operation">
+   <h2>Append Object</h2>
+   <label>Enter object in key:value format:</label>
+   <input type="text" id="objectInput" placeholder="e.g. name: xyz">
+   <button onclick="appendObject()">Append Object</button>
+   <div id="appendResult" class="output"></div>
+  </div>
+
+ </div>
+
+ <script src="script.js"></script>
+</body>
+</html>

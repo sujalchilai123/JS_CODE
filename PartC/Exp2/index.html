@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Information Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>Name: Sujal Chilai</h2>
+      <h3>Roll Number: 42315</h3>
+      <h3>Batch: R7</h3>
+    </div>
+
+    <div class="form-card">
+      <h2>Student Information Form</h2>
+      <form id="studentForm" onsubmit="return handleSubmit(event)">
+        <label>Full Name</label>
+        <input type="text" id="name" placeholder="Enter full name">
+        <div class="error" id="nameError"></div>
+
+        <label>Address</label>
+        <textarea id="address" placeholder="Enter address"></textarea>
+        <div class="error" id="addressError"></div>
+
+        <label>City</label>
+        <input type="text" id="city" placeholder="Enter city">
+        <div class="error" id="cityError"></div>
+
+        <label>State</label>
+        <input type="text" id="state" placeholder="Enter state">
+        <div class="error" id="stateError"></div>
+
+        <label>Gender</label>
+        <div class="gender-options">
+          <label><input type="radio" name="gender" value="Male"> Male</label>
+          <label><input type="radio" name="gender" value="Female"> Female</label>
+          <label><input type="radio" name="gender" value="Other"> Other</label>
+        </div>
+        <div class="error" id="genderError"></div>
+
+        <label>Mobile Number</label>
+        <input type="text" id="mobile" placeholder="Enter 10-digit mobile number">
+        <div class="error" id="mobileError"></div>
+
+        <label>Email ID</label>
+        <input type="text" id="email" placeholder="Enter email">
+        <div class="error" id="emailError"></div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

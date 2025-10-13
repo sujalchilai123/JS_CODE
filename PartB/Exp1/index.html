@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Operations using JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>Name: Sujal Chilai</h2>
+      <h3>Roll Number: 42315</h3>
+      <h3>Batch: R7</h3>
+    </div>
+
+    <h1>Array Operations</h1>
+
+    <div class="operation">
+      <h2>Create Array</h2>
+      <label>Enter number of elements:</label>
+      <input type="number" id="arraySize" placeholder="Number of elements">
+      <button onclick="setArraySize()">Set Size</button>
+      <div id="elementInputs"></div>
+      <div id="createResult" class="output"></div>
+    </div>
+
+    <div class="operation">
+      <h2>Remove Specific Element</h2>
+      <label>Enter element to remove:</label>
+      <input type="text" id="removeElement" placeholder="Element to remove">
+      <button onclick="removeElement()">Remove</button>
+      <div id="removeResult" class="output"></div>
+    </div>
+
+    <div class="operation">
+      <h2>Check if Element Exists</h2>
+      <label>Enter element to check:</label>
+      <input type="text" id="checkElement" placeholder="Element to check">
+      <button onclick="checkElement()">Check</button>
+      <div id="checkResult" class="output"></div>
+    </div>
+
+    <div class="operation">
+      <h2>Empty Array</h2>
+      <button onclick="emptyArray()">Empty Array</button>
+      <div id="emptyResult" class="output"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
