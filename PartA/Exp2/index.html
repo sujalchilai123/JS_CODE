@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Select Loop Type</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table Generator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="header">
-    <p><strong>Name:</strong> Sujal Chilai</p>
-    <p><strong>Roll No:</strong> 42315</p>
-    <p><strong>Batch:</strong> R7</p>
-  </div>
-
-  <div class="container">
-    <h1>Table Generator</h1>
-    <p>Select how you want to generate the multiplication table:</p>
-
-    <div class="buttons">
-      <button onclick="window.location.href='forloop.html'">Using For Loop</button>
-      <button onclick="window.location.href='whileloop.html'">Using While Loop</button>
-      <button onclick="window.location.href='dowhileloop.html'">Using Do-While Loop</button>
+    <div class="header">
+        <p><strong>Name:</strong> Sujal Chilai</p>
+        <p><strong>Roll No:</strong> 42315</p>
+        <p><strong>Batch:</strong> R7</p>
     </div>
-  </div>
+    <div class="container">
+        <h1>Table Generator</h1>
+        <p>Select how you want to generate the multiplication table</p>
+        <div class="buttons">
+            <button id="forLoopBtn">Using For Loop</button>
+            <button id="whileLoopBtn">Using While Loop</button>
+            <button id="doWhileLoopBtn">Using Do-While Loop</button>
+        </div>
+        <input type="number" id="num" placeholder="Enter a number">
+        <button id="generateBtn">Generate Table</button>
+        <div id="output"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
