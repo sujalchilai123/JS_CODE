@@ -1,15 +1,15 @@
 let currentLoop = "for";
 
-document.getElementById("forLoopBtn").addEventListener("click", function() {
+document.getElementById("forLoopBtn").addEventListener("click", ()=> {
     currentLoop = "for";
 });
-document.getElementById("whileLoopBtn").addEventListener("click", function() {
+document.getElementById("whileLoopBtn").addEventListener("click", ()=> {
     currentLoop = "while";
 });
-document.getElementById("doWhileLoopBtn").addEventListener("click", function() {
+document.getElementById("doWhileLoopBtn").addEventListener("click", ()=> {
     currentLoop = "do";
 });
-document.getElementById("generateBtn").addEventListener("click", function() {
+document.getElementById("generateBtn").addEventListener("click", ()=> {
     generateTable(currentLoop);
 });
 
