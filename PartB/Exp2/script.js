@@ -1,60 +1,65 @@
-let arr = [];
-let arraySize = 0;
+ let myarr = [];
+    let maxSize = 0;
 
-function setArraySize() {
-  arraySize = parseInt(document.getElementById("arraySize").value);
-  const elementInputsDiv = document.getElementById("elementInputs");
-  const createResultDiv = document.getElementById("createResult");
-  elementInputsDiv.innerHTML = "";
-  createResultDiv.innerHTML = "";
-  arr = [];
-
-  if (isNaN(arraySize) || arraySize <= 0) {
-    elementInputsDiv.innerHTML = "Please enter a valid number of elements.";
-    return;
-  }
-
-  for (let i = 0; i < arraySize; i++) {
-    const input = document.createElement("input");
-    input.type = "text";
-    input.placeholder = `Element ${i + 1}`;
-    input.id = `element${i}`;
-    elementInputsDiv.appendChild(input);
-  }
-
-  const createBtn = document.createElement("button");
-  createBtn.textContent = "Create Array";
-  createBtn.onclick = createArray;
-  elementInputsDiv.appendChild(createBtn);
-}
-
-function createArray() {
-  arr = [];
-  for (let i = 0; i < arraySize; i++) {
-    const value = document.getElementById(`element${i}`).value.trim();
-    if (value === "") {
-      document.getElementById("createResult").innerHTML = "Please enter all elements.";
-      return;
+    function setSize() {
+      const n = parseInt(document.getElementById("sizeInput").value);
+      if (isNaN(n) || n <= 0) {
+        showOutput("Please enter a natural number!");
+        return;
+      }
+      maxSize = n;
+      myarr = []; 
+      document.getElementById("addSection").style.display = "block";
+      document.getElementById("checkSection").style.display = "block";
+      showOutput("Size limit set = " + maxSize);
+      showOutput("Current Array: " + JSON.stringify(myarr));
     }
-    arr.push(value);
-  }
-  document.getElementById("createResult").innerHTML = `Array created: [${arr.join(", ")}]`;
-}
 
-function appendObject() {
-  const appendResultDiv = document.getElementById("appendResult");
-  if (arr.length === 0) {
-    appendResultDiv.innerHTML = "Please create an array first.";
-    return;
-  }
-  let input = document.getElementById("objectInput").value.trim();
-  if (input === "" || !input.includes(":")) {
-    appendResultDiv.innerHTML = "Enter object in key:value format.";
-    return;
-  }
-  let [key, value] = input.split(":");
-  let obj = {};
-  obj[key.trim()] = value.trim();
-  arr.push(obj);
-  appendResultDiv.innerHTML = `Object appended. Updated array: ${JSON.stringify(arr)}`;
-}
+    function appendElement() {
+      if (maxSize === 0) {
+        showOutput("Set the array size first!");
+        return;
+      }
+      if (myarr.length >= maxSize) {
+        showOutput("Overflow! Cannot add more than " + maxSize + " elements.");
+        return;
+      }
+
+      const raw = document.getElementById("valueInput").value.trim();
+      if (!raw) {
+        showOutput(" Please enter a value!");
+        return;
+      }
+
+      let value;
+      try {
+        value = JSON.parse(raw);
+      } catch {
+        value = raw; 
+      }
+
+      myarr.push(value);
+      showOutput(" Element added: " + JSON.stringify(value));
+      showOutput(" Current Array (" + myarr.length + "/" + maxSize + "): " + JSON.stringify(myarr));
+      document.getElementById("valueInput").value = "";
+    }
+
+    function checkIfArray() {
+      const idx = parseInt(document.getElementById("indexInput").value);
+      if (isNaN(idx) || idx < 0 || idx >= myarr.length) {
+        showOutput(" Invalid index!");
+        return;
+      }
+      const el = myarr[idx];
+      if (Array.isArray(el)) {
+        showOutput("Element at index " + idx + " IS an array: " + JSON.stringify(el));
+      } else {
+        showOutput(" Element at index " + idx + " is NOT an array (" + typeof el + "). Value: " + JSON.stringify(el));
+      }
+    }
+
+    function showOutput(msg) {
+      const out = document.getElementById("output");
+      out.innerHTML += msg + "\n\n";
+      out.scrollTop = out.scrollHeight;
+    }

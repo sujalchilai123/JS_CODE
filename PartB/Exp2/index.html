@@ -1,40 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Array & Array Objects in JavaScript</title>
- <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Experiment 7 : Array Object</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
- <div class="container">
-  <div class="header">
-   <h2>Name: Sujal Chilai</h2>
-   <h3>Roll Number: 42315</h3>
-   <h3>Batch: R7</h3>
-  </div>
+    <h3>Name: Sujal Chilai</h3>
+    <h3>Roll Number: 42315</h3>
+    <h3>Batch: R7</h3>
 
-  <h1>Array & Array Object Operations</h1>
+    <div class="row">
+      <input type="number" id="sizeInput" placeholder="Enter array size (natural number)" />
+      <button onclick="setSize()">Set Size</button>
+    </div>
 
-  <div class="operation">
-   <h2>Create Array</h2>
-   <label>Enter number of elements:</label>
-   <input type="number" id="arraySize" placeholder="Number of elements">
-   <button onclick="setArraySize()">Set Size</button>
-   <div id="elementInputs"></div>
-   <div id="createResult" class="output"></div>
-  </div>
+    <div id="addSection" class="row" style="display:none;">
+      <input type="text" id="valueInput" placeholder='Enter value (e.g: [1,2], {"a":10})'/>
+      <button onclick="appendElement()">Add Element</button>
+      <div class="hint">Use valid JSON for arrays/objects, plain text works too</div>
+    </div>
 
-  <div class="operation">
-   <h2>Append Object</h2>
-   <label>Enter object in key:value format:</label>
-   <input type="text" id="objectInput" placeholder="e.g. name: xyz">
-   <button onclick="appendObject()">Append Object</button>
-   <div id="appendResult" class="output"></div>
-  </div>
+    <div id="checkSection" class="row" style="display:none;">
+      <input type="number" id="indexInput" placeholder="Enter index to check"/>
+      <button onclick="checkIfArray()">Check If Array</button>
+    </div>
 
- </div>
+    <div class="output" id="output"></div>
 
- <script src="script.js"></script>
+
+  
 </body>
+<script src="script.js">
+   
+  </script>
 </html>
