@@ -1,5 +1,3 @@
-
-
 const num = parseInt(process.argv[2]); 
 
 if (isNaN(num)) {
@@ -8,43 +6,35 @@ if (isNaN(num)) {
   process.exit(1);
 }
 
+if (num === 0) {
+  console.log("Zero has no multiplication table. Please enter a non-zero number.");
+  process.exit(1);
+}
+
 function tableFor(num) {
-  console.log("\n Multiplication Table using FOR loop:");
-  if (num >= 1) {
-    for (let i = 1; i <= 10; i++) {
-      console.log(`${num} x ${i} = ${num * i}`);
-    }
-  } else {
-    console.log("Please enter a positive number.");
+  console.log("\nMultiplication Table using FOR loop:");
+  for (let i = 1; i <= 10; i++) {
+    console.log(`${num} x ${i} = ${num * i}`);
   }
 }
 
 function tableWhile(num) {
-  console.log("\n Multiplication Table using WHILE loop:");
+  console.log("\nMultiplication Table using WHILE loop:");
   let i = 1;
-  if (num >= 1) {
-    while (i <= 10) {
-      console.log(`${num} x ${i} = ${num * i}`);
-      i++;
-    }
-  } else {
-    console.log("Please enter a positive number.");
+  while (i <= 10) {
+    console.log(`${num} x ${i} = ${num * i}`);
+    i++;
   }
 }
 
 function tableDoWhile(num) {
-  console.log("\n Multiplication Table using DO-WHILE loop:");
+  console.log("\nMultiplication Table using DO-WHILE loop:");
   let i = 1;
-  if (num >= 1) {
-    do {
-      console.log(`${num} x ${i} = ${num * i}`);
-      i++;
-    } while (i <= 10);
-  } else {
-    console.log("Please enter a positive number.");
-  }
+  do {
+    console.log(`${num} x ${i} = ${num * i}`);
+    i++;
+  } while (i <= 10);
 }
-
 
 tableFor(num);
 tableWhile(num);
