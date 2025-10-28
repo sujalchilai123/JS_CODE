@@ -1,18 +1,48 @@
+// Button elements
+const forBtn = document.getElementById("forLoopBtn");
+const whileBtn = document.getElementById("whileLoopBtn");
+const doBtn = document.getElementById("doWhileLoopBtn");
+const loopButtons = [forBtn, whileBtn, doBtn];
+
 let currentLoop = "for";
 
-document.getElementById("forLoopBtn").addEventListener("click", ()=> {
+// Set initial active button and message
+setActiveButton(forBtn);
+updateLoopMsg();
+
+// Highlight which button is active
+function setActiveButton(selectedBtn) {
+    loopButtons.forEach(btn => btn.classList.remove("active"));
+    selectedBtn.classList.add("active");
+}
+
+// Update message for the selected loop
+function updateLoopMsg() {
+    const loopNames = { for: "For Loop", while: "While Loop", do: "Do-While Loop" };
+    document.getElementById("currentLoopMsg").innerText = `Currently using: ${loopNames[currentLoop]}`;
+}
+
+// Button event listeners
+forBtn.addEventListener("click", () => {
     currentLoop = "for";
+    setActiveButton(forBtn);
+    updateLoopMsg();
 });
-document.getElementById("whileLoopBtn").addEventListener("click", ()=> {
+whileBtn.addEventListener("click", () => {
     currentLoop = "while";
+    setActiveButton(whileBtn);
+    updateLoopMsg();
 });
-document.getElementById("doWhileLoopBtn").addEventListener("click", ()=> {
+doBtn.addEventListener("click", () => {
     currentLoop = "do";
+    setActiveButton(doBtn);
+    updateLoopMsg();
 });
-document.getElementById("generateBtn").addEventListener("click", ()=> {
+document.getElementById("generateBtn").addEventListener("click", () => {
     generateTable(currentLoop);
 });
 
+// Table generation logic
 function generateTable(loopType) {
     const num = parseInt(document.getElementById("num").value);
     const outputDiv = document.getElementById("output");
